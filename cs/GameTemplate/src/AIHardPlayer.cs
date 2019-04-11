@@ -105,8 +105,11 @@ public class AIHardPlayer : AIPlayer
     private List<Target> _LastHit = new List<Target>();
     private Target _CurrentTarget;
 
+
     public AIHardPlayer(BattleShipsGame game) : base(game)
     {
+        // MISSING
+        // Unsure of function
     }
 
     /// <summary>
@@ -130,7 +133,8 @@ public class AIHardPlayer : AIPlayer
                         SearchCoords(ref row, ref column);
                         break;
                     }
-
+                // MISSING
+                // Target ship argument
                 case AIStates.TargetingShip:
                 case AIStates.HittingShip:
                     {
