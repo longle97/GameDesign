@@ -23,6 +23,8 @@ public class AIMediumPlayer : AIPlayer
 
     public AIMediumPlayer(BattleShipsGame controller) : base(controller)
     {
+        // MISSING
+        // Unsure of function
     }
 
     /// <summary>
