@@ -203,4 +203,6 @@ static class HighScoreController
 			GameController.EndCurrentState();
 		}
 	}
+	// MISSING
+	// Saving high score missing
 }
