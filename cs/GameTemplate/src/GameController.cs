@@ -14,7 +14,6 @@ using SwinGameSDK;
 /// </summary>
 public static class GameController
 {
-
 	private static BattleShipsGame _theGame;
 	private static Player _human;
 
@@ -23,6 +22,7 @@ public static class GameController
 	private static Stack<GameState> _state = new Stack<GameState>();
 
 	private static AIOption _aiSetting;
+	
 	/// <summary>
 	/// Returns the current state of the game, indicating which screen is
 	/// currently being used
