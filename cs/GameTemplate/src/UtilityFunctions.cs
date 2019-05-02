@@ -303,6 +303,7 @@ static class UtilityFunctions
 		foreach (Sprite s in _Animations) {
 			SwinGame.DrawSprite(s);
 		}
+		
 	}
 
 	public static void DrawAnimationSequence()
@@ -313,4 +314,6 @@ static class UtilityFunctions
 			GameController.DrawScreen();
 		}
 	}
+	
+	
 }
