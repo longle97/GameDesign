@@ -181,7 +181,6 @@ public class Player : IEnumerable<Ship>
 	/// <returns>the result of the attack</returns>
 	internal AttackResult Shoot(int row, int col)
 	{
-		_shots += 1;
 		AttackResult result = default(AttackResult);
 		result = EnemyGrid.HitTile(row, col);
 
@@ -195,6 +194,14 @@ public class Player : IEnumerable<Ship>
 				break;
 		}
 
+		if (result.Value == ResultOfAttack.ShotAlready)
+		{
+			;
+		}
+		else 
+		{
+			_shots += 1;
+		}
 		return result;
 	}
 
