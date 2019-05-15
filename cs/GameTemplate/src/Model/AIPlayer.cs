@@ -13,6 +13,11 @@ using SwinGameSDK;
 public abstract class AIPlayer : Player
 {
 
+	private int _turn;
+
+	public int Turn {
+		get { return _turn; }
+	}
 	/// <summary>
 	/// Location can store the location of the last hit made by an
 	/// AI Player. The use of which determines the difficulty.
@@ -118,6 +123,7 @@ public abstract class AIPlayer : Player
 			result = _game.Shoot(row, column);
 			//take shot
 			ProcessShot(row, column, result);
+			_turn += 1;
 		} while (result.Value != ResultOfAttack.Miss && result.Value != ResultOfAttack.GameOver && !SwinGame.WindowCloseRequested());
 
 		return result;

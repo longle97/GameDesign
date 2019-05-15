@@ -4,5 +4,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 This compiler is provided as part of the Microsoft (R) .NET Framework, but only supports language versions up to C# 5, which is no longer the latest version. For compilers that support newer versions of the C# programming language, see http://go.microsoft.com/fwlink/?LinkID=533240
 
-src\Model\AIPlayer.cs(20,18): warning CS0660: 'AIPlayer.Location' defines operator == or operator != but does not override Object.Equals(object o)
-src\Model\AIPlayer.cs(20,18): warning CS0661: 'AIPlayer.Location' defines operator == or operator != but does not override Object.GetHashCode()
+src\Model\AIPlayer.cs(25,18): warning CS0660: 'AIPlayer.Location' defines operator == or operator != but does not override Object.Equals(object o)
+src\Model\AIPlayer.cs(25,18): warning CS0661: 'AIPlayer.Location' defines operator == or operator != but does not override Object.GetHashCode()
+src\Model\AIPlayer.cs(18,13): warning CS0108: 'AIPlayer.Turn' hides inherited member 'Player.Turn'. Use the new keyword if hiding was intended.
+src\Model\Player.cs(123,13): (Location of symbol related to previous warning)

@@ -20,8 +20,8 @@ public class Player : IEnumerable<Ship>
 	protected BattleShipsGame _game;
 	private int _shots;
 	private int _hits;
-
 	private int _misses;
+	private int _turn;
 	/// <summary>
 	/// Returns the game that the player is part of.
 	/// </summary>
@@ -120,6 +120,10 @@ public class Player : IEnumerable<Ship>
 		get { return _misses; }
 	}
 
+	public int Turn {
+		get { return _turn; }
+	}
+
 	public int Score {
 		get {
 			if (IsDestroyed) {
@@ -201,6 +205,7 @@ public class Player : IEnumerable<Ship>
 		else 
 		{
 			_shots += 1;
+			_turn += 1;
 		}
 		return result;
 	}
