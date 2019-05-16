@@ -79,7 +79,7 @@ static class DeploymentController
 			if (GameController.HumanPlayer.ReadyToDeploy & UtilityFunctions.IsMouseInRectangle(PLAY_BUTTON_LEFT, TOP_BUTTONS_TOP, PLAY_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
 				GameController.EndDeployment();
 			} else if (UtilityFunctions.IsMouseInRectangle(UP_DOWN_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
-				_currentDirection = Direction.LeftRight;
+				_currentDirection = Direction.UpDown;
 			} else if (UtilityFunctions.IsMouseInRectangle(LEFT_RIGHT_BUTTON_LEFT, TOP_BUTTONS_TOP, DIR_BUTTONS_WIDTH, TOP_BUTTONS_HEIGHT)) {
 				_currentDirection = Direction.LeftRight;
 			} else if (UtilityFunctions.IsMouseInRectangle(RANDOM_BUTTON_LEFT, TOP_BUTTONS_TOP, RANDOM_BUTTON_WIDTH, TOP_BUTTONS_HEIGHT)) {
@@ -100,7 +100,7 @@ static class DeploymentController
 	/// </remarks>
 	private static void DoDeployClick()
 	{
-		Point2D mouse = default(Point2D);
+        Point2D mouse; //= default(Point2D);
 
 		mouse = SwinGame.MousePosition();
 
@@ -144,9 +144,10 @@ static class DeploymentController
 
 		//DrawShips
 		foreach (ShipName sn in Enum.GetValues(typeof(ShipName))) {
-			int i = 0;
-			i = ((int)sn) - 1;
-			if (i >= 0) {
+            int i = Convert.ToInt32(Math.Floor(Convert.ToDouble(sn)) - 1);
+            // int i = 0;
+            // i = ((int)sn) - 1;
+            if (i >= 0) {
 				if (sn == _selectedShip) {
 					SwinGame.DrawBitmap(GameResources.GameImage("SelectedShip"), SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT);
 					//    SwinGame.FillRectangle(Color.LightBlue, SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)
@@ -178,10 +179,11 @@ static class DeploymentController
 	private static ShipName GetShipMouseIsOver()
 	{
 		foreach (ShipName sn in Enum.GetValues(typeof(ShipName))) {
-			int i = 0;
-			i =((int)sn) - 1;
+            int i = Convert.ToInt32(Math.Floor(Convert.ToDouble(sn)) - 1);
+            //int i = 0;
+            //i =((int)sn) - 1;
 
-			if (UtilityFunctions.IsMouseInRectangle(SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)) {
+            if (UtilityFunctions.IsMouseInRectangle(SHIPS_LEFT, SHIPS_TOP + i * SHIPS_HEIGHT, SHIPS_WIDTH, SHIPS_HEIGHT)) {
 				return sn;
 			}
 		}

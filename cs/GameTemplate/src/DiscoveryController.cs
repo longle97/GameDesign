@@ -36,9 +36,7 @@ static class DiscoveryController
 	/// </summary>
 	private static void DoAttack()
 	{
-		Point2D mouse = default(Point2D);
-
-		mouse = SwinGame.MousePosition();
+		Point2D mouse = SwinGame.MousePosition();
 
 		//Calculate the row/col clicked
 		int row = 0;
@@ -71,7 +69,7 @@ static class DiscoveryController
 		Turns = HumanTurn + ComputerTurn;
 
 		if ((SwinGame.KeyDown(KeyCode.vk_LSHIFT) | SwinGame.KeyDown(KeyCode.vk_RSHIFT)) & SwinGame.KeyDown(KeyCode.vk_c)) {
-			UtilityFunctions.DrawField(GameController.HumanPlayer.EnemyGrid, GameController.ComputerPlayer, true);
+			UtilityFunctions.DrawField(GameController.HumanPlayer.EnemyGrid, GameController.ComputerPlayer, false);
 		} else {
 			UtilityFunctions.DrawField(GameController.HumanPlayer.EnemyGrid, GameController.ComputerPlayer, false);
 		}

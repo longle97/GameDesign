@@ -91,3 +91,7 @@ C:\Users\jakaz\OneDrive\Documents\DevelopmentProject\GameDesign\cs\GameTemplate\
 C:\Users\jakaz\OneDrive\Documents\DevelopmentProject\GameDesign\cs\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csproj.CopyComplete
 C:\Users\jakaz\OneDrive\Documents\DevelopmentProject\GameDesign\cs\GameTemplate\obj\x86\Debug-Windows\MyGame.exe
 C:\Users\jakaz\OneDrive\Documents\DevelopmentProject\GameDesign\cs\GameTemplate\obj\x86\Debug-Windows\MyGame.pdb
+C:\Users\Esther\Documents\GitHub\GameDesign\cs\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csprojResolveAssemblyReference.cache
+C:\Users\Esther\Documents\GitHub\GameDesign\cs\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csproj.CoreCompileInputs.cache
+C:\Users\Esther\Documents\GitHub\GameDesign\cs\GameTemplate\obj\x86\Debug-Windows\MyGame.exe
+C:\Users\Esther\Documents\GitHub\GameDesign\cs\GameTemplate\obj\x86\Debug-Windows\MyGame.pdb

@@ -175,11 +175,11 @@ public static class GameResources
 
 	private static void PlaySwinGameIntro()
 	{
-		const int ANI_X = 143;
+		/*const int ANI_X = 143;
 		const int ANI_Y = 134;
 		const int ANI_W = 546;
 		const int ANI_H = 327;
-		const int ANI_V_CELL_COUNT = 6;
+		const int ANI_V_CELL_COUNT = 6;*/
 		const int ANI_CELL_COUNT = 11;
 
 		Audio.PlaySoundEffect(_StartSound);
@@ -188,7 +188,7 @@ public static class GameResources
 		int i = 0;
 		for (i = 0; i <= ANI_CELL_COUNT - 1; i++) {
 			SwinGame.DrawBitmap(_Background, 0, 0);
-			SwinGame.DrawBitmapPart(_Animation, (i / ANI_V_CELL_COUNT) * ANI_W, (i % ANI_V_CELL_COUNT) * ANI_H, ANI_W, ANI_H, ANI_X, ANI_Y);
+			//SwinGame.DrawBitmapPart(_Animation, (i / ANI_V_CELL_COUNT) * ANI_W, (i % ANI_V_CELL_COUNT) * ANI_H, ANI_W, ANI_H, ANI_X, ANI_Y);
 			SwinGame.Delay(20);
 			SwinGame.RefreshScreen();
 			SwinGame.ProcessEvents();
