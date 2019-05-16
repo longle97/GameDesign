@@ -20,14 +20,29 @@ static class EndingGameController
 	/// </summary>
 	public static void DrawEndOfGame()
 	{
+
+        Rectangle toDraw = new Rectangle();
+        string GameEndPrint = null;
+
 		UtilityFunctions.DrawField(GameController.ComputerPlayer.PlayerGrid, GameController.ComputerPlayer, true);
 		UtilityFunctions.DrawSmallField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer);
 
-		if (GameController.HumanPlayer.IsDestroyed) {
-			SwinGame.DrawTextLines("YOU LOSE!", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
-		} else {
-			SwinGame.DrawTextLines("-- WINNER --", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
-		}
+        toDraw.X = 0;
+        toDraw.Y = 250;
+        toDraw.Width = SwinGame.ScreenWidth();
+        toDraw.Height = SwinGame.ScreenHeight();
+
+        if (GameController.HumanPlayer.IsDestroyed)
+        {
+            GameEndPrint = "YOU LOSE!";
+
+        }
+        else
+        {
+            GameEndPrint = "-- WINNER --";
+        }
+
+        SwinGame.DrawText(GameEndPrint, Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
 	}
 
 	/// <summary>

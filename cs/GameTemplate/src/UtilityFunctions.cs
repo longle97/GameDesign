@@ -52,7 +52,7 @@ static class UtilityFunctions
 	/// <returns>true if the mouse is in the area checked</returns>
 	public static bool IsMouseInRectangle(int x, int y, int w, int h)
 	{
-		Point2D mouse = default(Point2D);
+        Point2D mouse;// = default(Point2D);
 		bool result = false;
 
 		mouse = SwinGame.MousePosition();
