@@ -19,37 +19,25 @@ static class EndingGameController
 	/// Draw the end of the game screen, shows the win/lose state
 	/// </summary>
 	public static void DrawEndOfGame()
-	{
-
-        Rectangle toDraw = new Rectangle();
-        string GameEndPrint = null;
-
-		UtilityFunctions.DrawField(GameController.ComputerPlayer.PlayerGrid, GameController.ComputerPlayer, true);
-		UtilityFunctions.DrawSmallField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer);
-
-        toDraw.X = 0;
-        toDraw.Y = 250;
-        toDraw.Width = SwinGame.ScreenWidth();
-        toDraw.Height = SwinGame.ScreenHeight();
+    {
+        UtilityFunctions.DrawField(GameController.ComputerPlayer.PlayerGrid, GameController.ComputerPlayer, true);
+        UtilityFunctions.DrawSmallField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer);
 
         if (GameController.HumanPlayer.IsDestroyed)
         {
-            GameEndPrint = "YOU LOSE!";
-
+            SwinGame.DrawTextLines("YOU LOSE!", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
         }
         else
         {
-            GameEndPrint = "-- WINNER --";
+            SwinGame.DrawTextLines("-- WINNER --", Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
         }
+    }
 
-        SwinGame.DrawText(GameEndPrint, Color.White, Color.Transparent, GameResources.GameFont("ArialLarge"), FontAlignment.AlignCenter, 0, 250, SwinGame.ScreenWidth(), SwinGame.ScreenHeight());
-	}
-
-	/// <summary>
-	/// Handle the input during the end of the game. Any interaction
-	/// will result in it reading in the highsSwinGame.
-	/// </summary>
-	public static void HandleEndOfGameInput()
+    /// <summary>
+    /// Handle the input during the end of the game. Any interaction
+    /// will result in it reading in the highsSwinGame.
+    /// </summary>
+    public static void HandleEndOfGameInput()
 	{
 		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_RETURN) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
 			HighScoreController.ReadHighScore(GameController.HumanPlayer.Score);
